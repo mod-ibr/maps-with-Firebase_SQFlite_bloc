@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_googlemaps_bloc/Features/Auth/data/presentation/views/authView.dart';
 import 'package:flutter_googlemaps_bloc/Features/splashView/view/widgets/sliding_text.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/appRouter.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/assets.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_googlemaps_bloc/core/utils/functions.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -67,7 +68,9 @@ class _SplashViewState extends State<SplashView>
   void goToSplashScreen() {
     Future.delayed(
       const Duration(seconds: 3),
-    ).then(
-        (value) => GoRouter.of(context).pushReplacement(AppRouter.kAuthView));
+    ).then((value) {
+      Navigator.of(context).pushReplacement(
+          AppFunctions.transitionAnymation(destination: AppRouter.authView));
+    });
   }
 }

@@ -19,12 +19,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: AppRouter.router,
+    return MaterialApp(
       theme: ThemeData(
           fontFamily: AssetsData.fontFamily,
           backgroundColor: Constants.backGroundColor),
       debugShowCheckedModeBanner: false,
+      home: AppRouter.splashView,
     );
   }
 }
