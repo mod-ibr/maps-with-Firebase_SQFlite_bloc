@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: AppRouter.router,
       theme: ThemeData(
-          fontFamily: AssetsData.fontFamily, backgroundColor: KbackGroundColor),
+          fontFamily: AssetsData.fontFamily,
+          backgroundColor: Constants.backGroundColor),
       debugShowCheckedModeBanner: false,
     );
   }
