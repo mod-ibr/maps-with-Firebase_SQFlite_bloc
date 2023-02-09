@@ -1,6 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_googlemaps_bloc/Features/Auth/data/presentation/views/authView.dart';
+import 'package:flutter_googlemaps_bloc/Features/splashView/view/splashView.dart';
+import 'package:flutter_googlemaps_bloc/core/utils/appRouter.dart';
+import 'package:flutter_googlemaps_bloc/core/utils/assets.dart';
+import 'package:flutter_googlemaps_bloc/core/utils/constants.dart';
 import 'package:flutter_googlemaps_bloc/firebase_options.dart';
 
 void main() async {
@@ -16,9 +19,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
+      theme: ThemeData(
+          fontFamily: AssetsData.fontFamily, backgroundColor: KbackGroundColor),
       debugShowCheckedModeBanner: false,
-      home: AuthView(),
     );
   }
 }
