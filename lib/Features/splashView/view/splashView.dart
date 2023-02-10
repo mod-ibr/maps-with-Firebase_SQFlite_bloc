@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_googlemaps_bloc/Features/Auth/data/presentation/views/authView.dart';
 import 'package:flutter_googlemaps_bloc/Features/splashView/view/widgets/sliding_text.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/appRouter.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/assets.dart';
