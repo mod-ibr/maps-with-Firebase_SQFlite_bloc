@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/widgets/custom_text.dart';
 
 class CustomSocialButtonIcon extends StatelessWidget {
   final String? imageName;

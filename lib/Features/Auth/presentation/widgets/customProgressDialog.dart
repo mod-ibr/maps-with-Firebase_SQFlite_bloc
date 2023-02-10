@@ -4,7 +4,7 @@ import 'package:flutter_googlemaps_bloc/core/utils/constants.dart';
 class CustomProgressDialog extends StatelessWidget {
   final String status;
 
-  CustomProgressDialog({super.key, required this.status});
+  const CustomProgressDialog({super.key, required this.status});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class CustomProgressDialog extends StatelessWidget {
       child: Row(
         children: [
           const SizedBox(width: 5),
-          CircularProgressIndicator(
+          const CircularProgressIndicator(
             valueColor: AlwaysStoppedAnimation<Color>(Constants.mainColor),
           ),
           const SizedBox(width: 30),

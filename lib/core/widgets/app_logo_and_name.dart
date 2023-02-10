@@ -18,9 +18,9 @@ App Logo and Name
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
+      children: const [
         LogoGIF(),
-        const CustomText(
+        CustomText(
           color: Constants.mainColor,
           text: Constants.appName,
           alignment: Alignment.center,

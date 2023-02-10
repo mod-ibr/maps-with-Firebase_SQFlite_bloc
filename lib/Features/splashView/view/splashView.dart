@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_googlemaps_bloc/Features/splashView/view/widgets/sliding_text.dart';
+import 'package:flutter_googlemaps_bloc/core/services/shared_preferences.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/appRouter.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/assets.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/functions.dart';
@@ -26,7 +27,6 @@ class _SplashViewState extends State<SplashView>
   @override
   void dispose() {
     super.dispose();
-
     animationController.dispose();
   }
 
@@ -68,8 +68,9 @@ class _SplashViewState extends State<SplashView>
     Future.delayed(
       const Duration(seconds: 3),
     ).then((value) {
+      LocalSharedPreferences.isFirstAppRun(isFirstRun: false);
       Navigator.of(context).pushReplacement(
-          AppFunctions.transitionAnymation(destination: AppRouter.authView));
+          AppFunctions.transitionAnymation(destination: AppRouter.logInView));
     });
   }
 }

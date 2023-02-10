@@ -13,8 +13,8 @@ abstract class AppFunctions {
           return Align(
             child: SizeTransition(
               sizeFactor: animation,
-              child: child,
               axisAlignment: 0.0,
+              child: child,
             ),
           );
         });

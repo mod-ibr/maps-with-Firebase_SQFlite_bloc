@@ -1,6 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/constants.dart';
-
 
 import '../../../../core/widgets/custom_text.dart';
 
@@ -12,7 +12,8 @@ class CustomTextFormField extends StatelessWidget {
   final Function onSave;
   final Function validator;
 
-  CustomTextFormField({
+  const CustomTextFormField({
+    super.key,
     this.text,
     this.hint,
     required this.onSave,
@@ -53,7 +54,7 @@ class CustomTextFormFieldForPhone extends StatelessWidget {
   final Function validator;
   final TextInputType textInputType;
 
-  CustomTextFormFieldForPhone({
+  const CustomTextFormFieldForPhone({super.key, 
     this.text,
     this.hint,
     this.textInputType = TextInputType.phone,
@@ -95,7 +96,7 @@ class CustomPasswordTextFormField extends StatelessWidget {
   final Function onSave;
   final Function validator;
 
-  CustomPasswordTextFormField({
+  const CustomPasswordTextFormField({super.key, 
     this.text = 'Email',
     this.hint = 'example@gmail.com',
     required this.onSave,
@@ -112,24 +113,28 @@ class CustomPasswordTextFormField extends StatelessWidget {
           color: Colors.grey.shade800,
         ),
         TextFormField(
-             // obscureText: controller.obscureText.value,
-              onSaved: (value) => onSave(value!),
-              validator: (value) => validator(value!),
-              decoration: InputDecoration(
-                suffix: InkWell(
-               //   onTap: () => controller.toggelPassword(),
-                  child: Icon(
-                    (Icons.visibility),
-                    color:Constants.mainColor,
-                  ),
-                ),
-                hintText: hint,
-                hintStyle: const TextStyle(
-                  color: Colors.black54,
-                ),
-                fillColor: Colors.white,
+          // obscureText: controller.obscureText.value,
+          onSaved: (value) => onSave(value!),
+          validator: (value) => validator(value!),
+          decoration: InputDecoration(
+            suffix: InkWell(
+              onTap: () {
+                if (kDebugMode) {
+                  print('Toogel Visibility Of Password');
+                }
+              },
+              child: const Icon(
+                (Icons.visibility),
+                color: Constants.mainColor,
               ),
-            )
+            ),
+            hintText: hint,
+            hintStyle: const TextStyle(
+              color: Colors.black54,
+            ),
+            fillColor: Colors.white,
+          ),
+        )
       ],
     );
   }

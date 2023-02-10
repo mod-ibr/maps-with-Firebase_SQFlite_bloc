@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_googlemaps_bloc/core/widgets/custom_buttom.dart';
 import 'package:flutter_googlemaps_bloc/Features/Auth/presentation/widgets/custom_social_button_icon.dart';
@@ -6,13 +7,12 @@ import 'package:flutter_googlemaps_bloc/core/widgets/app_logo_and_name.dart';
 import 'package:flutter_googlemaps_bloc/core/widgets/custom_text.dart';
 import 'package:flutter_googlemaps_bloc/Features/Auth/presentation/widgets/custom_text_form_field.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/assets.dart';
-import 'package:flutter_googlemaps_bloc/core/widgets/logo_GIF.dart';
-
+ 
 class LogInView extends StatelessWidget {
   const LogInView({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: LogInViewBody());
+    return const Scaffold(body: LogInViewBody());
   }
 }
 
@@ -56,7 +56,9 @@ class LogInViewBody extends StatelessWidget {
                   text: 'Email',
                   hint: 'example@gmail.com',
                   onSave: (value) {
-                    print('Email: $value');
+                    if (kDebugMode) {
+                      print('Email: $value');
+                    }
                   },
                   validator: (value) {
                     if (value!.isEmpty) {
@@ -71,7 +73,9 @@ class LogInViewBody extends StatelessWidget {
                   text: 'Password',
                   hint: '* * * * * * ',
                   onSave: (value) {
-                    print('PassWrd :$value');
+                    if (kDebugMode) {
+                      print('PassWrd :$value');
+                    }
                   },
                   validator: (value) {
                     if (value!.isEmpty) {
@@ -84,7 +88,9 @@ class LogInViewBody extends StatelessWidget {
                   onPress: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState?.save();
-                      print('Valiation Done : Go to Maps Home Page');
+                      if (kDebugMode) {
+                        print('Valiation Done : Go to Maps Home Page');
+                      }
                     }
                   },
                   text: 'SIGN IN',
@@ -108,7 +114,9 @@ class LogInViewBody extends StatelessWidget {
               const SizedBox(width: 8),
               InkWell(
                 onTap: () {
-                  print('Go To register Page ');
+                  if (kDebugMode) {
+                    print('Go To register Page ');
+                  }
                 },
                 child: const CustomText(
                   text: 'sign up here',
@@ -136,19 +144,25 @@ class LogInViewBody extends StatelessWidget {
             children: [
               CustomSocialButtonIcon(
                 onPress: () {
-                  print('Google Sign In');
+                  if (kDebugMode) {
+                    print('Google Sign In');
+                  }
                 },
                 imageName: AssetsData.googleIcon,
               ),
               CustomSocialButtonIcon(
                 onPress: () {
-                  print('FaceBook Sign In');
+                  if (kDebugMode) {
+                    print('FaceBook Sign In');
+                  }
                 },
                 imageName: AssetsData.facebookIcon,
               ),
               CustomSocialButtonIcon(
                 onPress: () {
-                  print('Phone Sign In');
+                  if (kDebugMode) {
+                    print('Phone Sign In');
+                  }
                 },
                 iconData: Icons.phone,
               ),
