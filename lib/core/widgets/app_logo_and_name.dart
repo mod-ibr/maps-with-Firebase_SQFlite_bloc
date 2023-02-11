@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_googlemaps_bloc/core/utils/assets.dart';
-import 'package:flutter_googlemaps_bloc/core/utils/constants.dart';
-import 'package:flutter_googlemaps_bloc/core/widgets/custom_text.dart';
-import 'package:flutter_googlemaps_bloc/core/widgets/logo_GIF.dart';
+import '../utils/assets.dart';
+import '../utils/constants.dart';
+import 'custom_text.dart';
+import 'logo_GIF.dart';
 
 class AppLogo extends StatelessWidget {
 /*

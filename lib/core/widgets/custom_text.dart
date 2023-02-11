@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_googlemaps_bloc/core/utils/assets.dart';
+import '../utils/assets.dart';
 
 class CustomText extends StatelessWidget {
   final String text;

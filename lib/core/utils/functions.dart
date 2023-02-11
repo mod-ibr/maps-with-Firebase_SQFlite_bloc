@@ -7,9 +7,10 @@ abstract class AppFunctions {
           return destination;
         },
         transitionDuration: const Duration(milliseconds: 2000),
+        barrierColor: Color.fromARGB(255, 244, 125, 117),
         transitionsBuilder: (context, animation, anotherAnimation, child) {
-          animation =
-              CurvedAnimation(curve: curve ?? Curves.easeIn, parent: animation);
+          animation = CurvedAnimation(
+              curve: curve ?? Curves.decelerate, parent: animation);
           return Align(
             child: SizeTransition(
               sizeFactor: animation,

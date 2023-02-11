@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_googlemaps_bloc/core/utils/constants.dart';
+import '../../../../core/utils/constants.dart';
 
 class CustomProgressDialog extends StatelessWidget {
   final String status;

@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_googlemaps_bloc/core/utils/constants.dart';
+import '../../../../core/utils/constants.dart';
 
 import '../../../../core/widgets/custom_text.dart';
 

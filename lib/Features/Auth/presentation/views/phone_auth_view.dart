@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_googlemaps_bloc/features/Auth/presentation/widgets/phone_auth_view_body.dart';
+import '../../../../features/Auth/presentation/widgets/phone_auth_view_body.dart';
 
 class PhoneAuthView extends StatelessWidget {
   const PhoneAuthView({super.key});

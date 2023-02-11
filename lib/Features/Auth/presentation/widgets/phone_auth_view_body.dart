@@ -1,19 +1,19 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_googlemaps_bloc/core/utils/appRouter.dart';
-import 'package:flutter_googlemaps_bloc/core/utils/assets.dart';
-import 'package:flutter_googlemaps_bloc/core/utils/constants.dart';
-import 'package:flutter_googlemaps_bloc/core/utils/functions.dart';
-import 'package:flutter_googlemaps_bloc/core/widgets/app_logo_and_name.dart';
-import 'package:flutter_googlemaps_bloc/core/widgets/custom_buttom.dart';
-import 'package:flutter_googlemaps_bloc/core/widgets/custom_text.dart';
+import '../../../../core/utils/app_router.dart';
+import '../../../../core/utils/assets.dart';
+import '../../../../core/utils/constants.dart';
+import '../../../../core/utils/functions.dart';
+import '../../../../core/widgets/app_logo_and_name.dart';
+import '../../../../core/widgets/custom_buttom.dart';
+import '../../../../core/widgets/custom_text.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 class PhoneAuthViewBody extends StatelessWidget {
   PhoneAuthViewBody({super.key});
   final GlobalKey<FormState> _phoneFormKey = GlobalKey();
   final TextEditingController textEditingController = TextEditingController();
-  late final String completePhoneNumber, countryCode, countryISOCode;
+  late String completePhoneNumber, countryCode, countryISOCode;
 
 // Phone TextField
   Widget buildPhoneFormField(double width, double height) {
@@ -46,11 +46,12 @@ class PhoneAuthViewBody extends StatelessWidget {
   }
 
 // Verify Button Function
-  void verify() {
+  void verify(context) {
     if (_phoneFormKey.currentState!.validate()) {
       if (kDebugMode) {
         print('Valiation Done : Go to OTP  Page');
       }
+      AppFunctions.goToRoute(AppRouter.otpView, context);
     } else {
       if (kDebugMode) {
         print('########### DATA Failed during verification');
@@ -86,78 +87,75 @@ class PhoneAuthViewBody extends StatelessWidget {
             // Phone Auth Section
             Form(
               key: _phoneFormKey,
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    CustomText(
-                      text: 'Log in with Your Phone Number ',
-                      alignment: Alignment.centerLeft,
-                      fontFamily: AssetsData.fontFamily,
-                      color: Constants.mainColor.withOpacity(0.8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CustomText(
+                    text: 'Log in with Your Phone Number ',
+                    alignment: Alignment.centerLeft,
+                    fontFamily: AssetsData.fontFamily,
+                    color: Constants.mainColor.withOpacity(0.8),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 23,
+                  ),
+                  const SizedBox(height: 40),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 2),
+                    child: const CustomText(
+                      text: 'Please enter your phone number ',
+                      color: Colors.black54,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      fontSize: 23,
                     ),
-                    const SizedBox(height: 40),
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 2),
-                      child: const CustomText(
-                        text: 'Please enter your phone number ',
-                        color: Colors.black54,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  ),
+                  const SizedBox(height: 10),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 2),
+                    child: const CustomText(
+                      text: 'without the country code.',
+                      color: Colors.black54,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
                     ),
-                    const SizedBox(height: 10),
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 2),
-                      child: const CustomText(
-                        text: 'without country code.',
-                        color: Colors.black54,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 40),
-                    buildPhoneFormField(width, height),
-                    const SizedBox(height: 55),
-                    CustomButton(
-                      onPress: () => verify(),
-                      text: 'Verify',
-                    ),
-                    const SizedBox(height: 40),
+                  ),
+                  const SizedBox(height: 40),
+                  buildPhoneFormField(width, height),
+                  const SizedBox(height: 55),
+                  CustomButton(
+                    onPress: () => verify(context),
+                    text: 'Verify',
+                  ),
+                  const SizedBox(height: 40),
 
-                    //  Log in Route
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const CustomText(
-                          text: 'have an account, ',
+                  //  Log in Route
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const CustomText(
+                        text: 'have an account, ',
+                        alignment: Alignment.center,
+                        fontFamily: AssetsData.fontFamily,
+                        fontSize: 13,
+                      ),
+                      const SizedBox(width: 8),
+                      InkWell(
+                        onTap: () {
+                          if (kDebugMode) {
+                            print('Go To Log In Page ');
+                          }
+                          AppFunctions.goToRoute(AppRouter.logInView, context);
+                        },
+                        child: const CustomText(
+                          text: 'Log in here',
+                          color: Constants.mainColor,
                           alignment: Alignment.center,
                           fontFamily: AssetsData.fontFamily,
-                          fontSize: 13,
+                          fontSize: 15,
                         ),
-                        const SizedBox(width: 8),
-                        InkWell(
-                          onTap: () {
-                            if (kDebugMode) {
-                              print('Go To Log In Page ');
-                            }
-                            AppFunctions.goToRoute(
-                                AppRouter.logInView, context);
-                          },
-                          child: const CustomText(
-                            text: 'Log in here',
-                            color: Constants.mainColor,
-                            alignment: Alignment.center,
-                            fontFamily: AssetsData.fontFamily,
-                            fontSize: 15,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
           ],

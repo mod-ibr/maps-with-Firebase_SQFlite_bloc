@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_googlemaps_bloc/core/utils/constants.dart';
+import '../utils/constants.dart';
 
 import 'custom_text.dart';
 
