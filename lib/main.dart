@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_googlemaps_bloc/Features/Auth/presentation/views/register_view.dart';
 import 'package:flutter_googlemaps_bloc/core/services/shared_preferences.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/appRouter.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/assets.dart';

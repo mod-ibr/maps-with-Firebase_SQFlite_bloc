@@ -19,4 +19,9 @@ abstract class AppFunctions {
           );
         });
   }
+
+  static void goToRoute(Widget route, BuildContext context) {
+    Navigator.of(context)
+        .push(AppFunctions.transitionAnymation(destination: route));
+  }
 }

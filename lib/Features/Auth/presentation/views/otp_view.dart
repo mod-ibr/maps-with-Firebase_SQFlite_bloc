@@ -111,8 +111,10 @@ class OTPview extends StatelessWidget {
   }
 
   verifyOptCode() {
-    print(
+    if (kDebugMode) {
+      print(
         '############################### Start Phone Auth ###############################');
+    }
   }
 
   @override
