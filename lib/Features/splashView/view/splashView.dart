@@ -21,7 +21,7 @@ class _SplashViewState extends State<SplashView>
   void initState() {
     super.initState();
     initSlidingAnimation();
-    goToSplashScreen();
+    goToNextScreen();
   }
 
   @override
@@ -64,7 +64,7 @@ class _SplashViewState extends State<SplashView>
     animationController.forward();
   }
 
-  void goToSplashScreen() {
+  void goToNextScreen() {
     Future.delayed(
       const Duration(seconds: 3),
     ).then((value) {
