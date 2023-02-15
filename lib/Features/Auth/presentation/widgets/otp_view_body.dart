@@ -2,13 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/assets.dart';
 import 'package:flutter_googlemaps_bloc/core/widgets/app_logo_and_name.dart';
-import 'package:flutter_googlemaps_bloc/features/auth/presentation/widgets/OTPCode.dart';
+import 'package:flutter_googlemaps_bloc/features/auth/presentation/widgets/otp_code_widget.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../core/widgets/custom_buttom.dart';
 import '../../../../core/widgets/custom_text.dart';
 
 class OTPViewBody extends StatelessWidget {
-   OTPViewBody({super.key, this.phoneNumber});
+  OTPViewBody({super.key, this.phoneNumber});
 
   final phoneNumber;
   String smsCode = '';
@@ -71,7 +71,7 @@ class OTPViewBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 35),
-              OTPCode(smsCode: smsCode),
+              OTPCodeWidget(),
               // pinCodeWidget(context, width, height),
               const SizedBox(height: 35),
               CustomButton(

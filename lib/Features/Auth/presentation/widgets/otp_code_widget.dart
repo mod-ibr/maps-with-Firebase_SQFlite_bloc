@@ -4,13 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/constants.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class OTPCode extends StatelessWidget {
-  OTPCode({super.key, required this.smsCode});
-
-  late String smsCode;
+class OTPCodeWidget extends StatelessWidget {
+  const OTPCodeWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    late String smsCode;
     double width = MediaQuery.of(context).size.width;
     return PinCodeTextField(
       appContext: context,
