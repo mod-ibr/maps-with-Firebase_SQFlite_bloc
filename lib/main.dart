@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_googlemaps_bloc/core/utils/app_router.dart';
-import 'package:flutter_googlemaps_bloc/features/auth/presentation/views/otp_view.dart';
 import 'core/services/shared_preferences.dart';
 import 'core/utils/assets.dart';
 import 'core/utils/constants.dart';
